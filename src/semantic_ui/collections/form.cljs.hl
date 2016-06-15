@@ -39,6 +39,6 @@
       (semui/extelem kids)))
 
 (defelem dividing-header [attr kids]
-  (->
+  (-> attr
     (assoc :extends div :pre-class [:ui] :post-class [:dividing :header])
     (semui/extelem kids)))
