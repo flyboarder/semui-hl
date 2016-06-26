@@ -12,6 +12,16 @@
       (assoc :extends div :post-class [:bar])
       (semui/extelem kids)))
 
+(defelem attached-progress [attr kids]
+  (-> attr
+      (assoc :extends progress :pre-class [:attached])
+      (semui/extelem kids)))
+
+(defelem bottom-attached-progress [attr kids]
+  (-> attr
+      (assoc :extends attached-progress :pre-class [:bottom])
+      (semui/extelem kids)))
+
 (defmethod do! :progress
   [elem _ v]
   (when v

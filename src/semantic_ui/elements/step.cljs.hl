@@ -24,6 +24,21 @@
         :post-class [:vertical])
       (semui/extelem kids)))
 
+(defelem attached-steps [attr kids]
+  (-> attr
+      (assoc :extends steps :pre-class [:attached])
+      (semui/extelem attr kids)))
+
+(defelem top-attached-steps [attr kids]
+  (-> attr
+      (assoc :extends attached-steps :pre-class [:top])
+      (semui/extelem attr kids)))
+
+(defelem bottom-attached-steps [attr kids]
+  (-> attr
+      (assoc :extends attached-steps :pre-class [:bottom])
+      (semui/extelem attr kids)))
+      
 (defelem step [attr kids]
   (let [icon  (:icon attr)
         title (:title attr)
