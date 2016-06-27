@@ -6,6 +6,16 @@
       (assoc :extends div :pre-class [:ui] :post-class [:checkbox])
       (semui/extelem kids)))
 
+(defelem slider-checkbox [attr kids]
+  (-> attr
+      (assoc :extends checkbox :post-class [:slider])
+      (semui/extelem kids)))
+
+(defelem toggle-checkbox [attr kids]
+  (-> attr
+      (assoc :extends checkbox :post-class [:toggle])
+      (semui/extelem kids)))
+
 (defmethod do! :checkbox
   [elem _ v]
   (when v
